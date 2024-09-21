@@ -13,12 +13,9 @@
                     <h3 class="font-car text-gray-500 text-2xl">Price:</h3>
                     <p>
                         <span
-                            class=" text-3xl font-bold text-pr-400 ms-3 me-1 border border-pr-400 p-2 rounded-md">{{ $car->price_per_day }}
+                            class=" text-3xl font-bold text-pr-400 ms-3 me-1 border border-pr-400 p-2 rounded-md">{{ $car->daily_rent_price }}
                             $</span>
-                        <span
-                            class="text-lg font-medium text-red-500 line-through">{{ intval(($car->price_per_day * 100) / (100)) }}
-                            $
-                        </span>
+                        
                     </p>
                 </div>
 

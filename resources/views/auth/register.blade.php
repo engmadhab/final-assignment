@@ -28,58 +28,7 @@
                     @enderror
                 </div>
 
-                <div class="flex md:flex-row flex-col justify-evenly px-6 py-4 items-center text-center">
-
-                    <div class="grid grid-cols-3 ">
-                        <div class="m-3">
-                            <input type="radio" name="avatar_option" value="/images/avatars/avatar_1.jpg" id="avatar_1" class="hidden" >
-                            <label class="" for="avatar_1">
-                                <img loading="lazy" class=" avatar w-12 " src="/images/avatars/avatar_1.jpg" alt="">
-                            </label>
-                        </div>
-                        <div class="m-3">
-                            <input type="radio" name="avatar_option" value="/images/avatars/avatar_2.jpg" id="avatar_2" class="hidden">
-                            <label class="" for="avatar_2">
-                                <img loading="lazy" class=" avatar w-12" src="/images/avatars/avatar_2.jpg" alt="">
-                            </label>
-                        </div>
-                        <div class="m-3">
-                            <input type="radio" name="avatar_option" value="/images/avatars/avatar_3.jpg" id="avatar_3" class="hidden">
-                            <label class="" for="avatar_3">
-                                <img loading="lazy" class=" avatar w-12" src="/images/avatars/avatar_3.jpg" alt="">
-                            </label>
-                        </div>
-                        <div class="m-3">
-                            <input type="radio" name="avatar_option" value="/images/avatars/avatar_4.jpg" id="avatar_4" class="hidden">
-                            <label class="" for="avatar_4">
-                                <img loading="lazy" class=" avatar w-12" src="/images/avatars/avatar_4.jpg" alt="">
-                            </label>
-                        </div>
-                        <div class="m-3">
-                            <input type="radio" name="avatar_option" value="/images/avatars/avatar_5.jpg" id="avatar_5" class="hidden">
-                            <label class="" for="avatar_5">
-                                <img loading="lazy" class=" avatar w-12" src="/images/avatars/avatar_5.jpg" alt="">
-                            </label>
-                        </div>
-                        <div class="m-3">
-                            <input type="radio" name="avatar_option" value="/images/avatars/avatar_6.jpg"  id="avatar_6" class="hidden">
-                            <label class="" for="avatar_6">
-                                <img loading="lazy" class=" avatar w-12" src="/images/avatars/avatar_6.jpg" alt="">
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="w-1/3 mb-2">
-                        <p>OR</p>
-                    </div>
-
-                    <div>
-                        <input
-                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none "
-                            id="file_input" type="file" name="avatar_choose">
-                    </div>
-
-                </div>
+ 
 
                 <div class="mb-6">
                     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -121,23 +70,5 @@
         </div>
 
     </div>
-    <script>
-        var radios = document.querySelectorAll('input[type="radio"]');
-        var images = document.querySelectorAll('.avatar');
 
-        radios.forEach(function(radio, index) {
-            radio.addEventListener('change', function() {
-                if (this.checked) {
-                    images.forEach(function(image, imageIndex) {
-                        if (imageIndex === index) {
-                            image.classList.add('border', 'border-red-600', 'rounded-full', 'p-1');
-                        } else {
-                            image.classList.remove('border', 'border-red-600', 'rounded-full',
-                                'p-1');
-                        }
-                    });
-                }
-            });
-        });
-    </script>
 @endsection

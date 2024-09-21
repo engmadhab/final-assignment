@@ -72,29 +72,6 @@ class RegisterController extends Controller
 
 
 
-    // ---------------- wrong method to add the image to user model ------------------
-    /*              protected function create(array $data, Request $request)
-                        {
-                            $user = new User;
-                            $user->name = $data['name'];
-                            $user->email = $data['email'];
-                            $user->password = Hash::make($data['password']);
-
-                            if ($request->hasFile('avatar_choose')) {
-                                $avatarName = $data['name'] . '-' . Str::random(10) . '.' . $request->file('image')->extension();
-                                $image = $request->file('avatar_choose');
-                                $path = $image->storeAs('images/avatars', $avatarName);
-                                $user->avatar = $path;
-                            } else {
-                                $user->avatar = $request->avatar_option;
-                            }
-                            $user->save();
-
-
-                        }
-}
-*/
-
 
 
 
@@ -105,18 +82,6 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
 
         $user = $this->create($request->all());
-
-        // Handle avatar upload
-        if ($request->hasFile('avatar_choose') && $request->file('avatar_choose')->isValid()) {
-            $avatarName = $request->name . '-' . Str::random(10) . '.' . $request->file('avatar_choose')->extension();
-            $avatarNameNospaces = preg_replace('/\s+/', '', $avatarName);
-            $path = $request->file('avatar_choose')->storeAs('/images/avatars', $avatarNameNospaces);
-            $user->avatar = '/'.$path;
-            $user->save();
-        } else {
-            $user->avatar = $request->avatar_option;
-            $user->save();
-        }
 
         event(new Registered($user));
 

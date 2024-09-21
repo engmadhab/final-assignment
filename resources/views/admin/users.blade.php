@@ -19,9 +19,7 @@
         <div class="grid md:grid-cols-3  gap-6 mt-6">
             @foreach ($admins as $admin)
                 <div class="bg-white shadow-xl rounded-md flex  justify-start items-center mx-2 ">
-                    <div class="w-1/6 m-3 ">
-                        <img loading="lazy" src="{{ $admin->avatar }}" alt="admin avatar" class="">
-                    </div>
+                    
                     <div class="my-3 ">
                         <h2 class="font-car text-gray-900 font-semibold text-xl">{{ $admin->name }}</h2>
                         <h3 class=" text-gray-700 font-medium ">{{ $admin->email }}</h3>
@@ -65,9 +63,7 @@
                         @forelse ($clients as $client)
                             <tr class="text-gray-700 dark:text-gray-400">
 
-                                <td class="px-4 py-3 text-sm w-1/12">
-                                    <img loading="lazy" src="{{ $client->avatar }}" alt="">
-                                </td>
+                                
                                 <td class="px-4 py-3 text-sm">
                                     <p>
                                         {{ $client->name }}

@@ -78,18 +78,6 @@ class addNewAdminController extends Controller
 
         $user = $this->create($request->all());
 
-        // Handle avatar upload
-        if ($request->hasFile('avatar_choose') && $request->file('avatar_choose')->isValid()) {
-            $avatarName = $request->name . '-' . Str::random(10) . '.' . $request->file('avatar_choose')->extension();
-            $avatarNameNospaces = preg_replace('/\s+/', '', $avatarName);
-            $path = $request->file('avatar_choose')->storeAs('/images/avatars', $avatarNameNospaces);
-            $user->avatar = '/' . $path;
-            $user->save();
-        } else {
-            $user->avatar = $request->avatar_option;
-            $user->save();
-        }
-
         event(new Registered($user));
 
 

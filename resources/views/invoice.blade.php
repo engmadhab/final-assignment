@@ -195,7 +195,7 @@
             </div>
 
         </div>
-        <h3 style="text-align: center; margin-top: 30px">Thank you for choosing and trusting our car company ❤️</h3>
+        <h3 style="text-align: center; margin-top: 30px">Thank you for choosing us ❤️</h3>
     </div>
 </body>
 

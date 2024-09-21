@@ -3,9 +3,7 @@
     <div class="mx-auto max-w-screen-xl">
         <div class=" bg-white rounded-md p-6 flex md:flex-row flex-col md:my-12">
             <div class="md:w-1/4 md:border-r border-gray-900 flex flex-col gap-8">
-                <div class="flex justify-center">
-                    <img loading="lazy" class="w-[150px]" src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name }}">
-                </div>
+                
                 <div class="text-center md:text-start">
                     <h2 class="text-lg font-medium text-gray-900"><span
                             class="text-lg font-car font-normal text-gray-500">Name:
