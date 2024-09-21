@@ -11,23 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rentals', function (Blueprint $table) {
-            $table->id();
+        Schema::table('reservations', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->unsignedBigInteger('car_id');
             $table->foreign('car_id')->references('id')->on('cars');
-
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->integer('days');
-            $table->decimal('price_per_day', 10, 2);
-            $table->decimal('total_price');
-            $table->string('status')->default('active');
-            $table->string('payment_method');
-            $table->string('payment_status')->default('pending');
-            $table->timestamps();
         });
     }
 
@@ -36,6 +25,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rentals');
+        Schema::table('reservations', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropColumn('user_id');
+            $table->dropForeign(['car_id']);
+            $table->dropColumn('car_id');
+        });
     }
 };

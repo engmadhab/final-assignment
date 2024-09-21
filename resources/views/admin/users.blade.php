@@ -9,7 +9,7 @@
                 <p class="my-2 mx-8  p-2 font-car font-bold text-gray-600 text-lg ">Admins</p>
                 <hr class=" mt-8 h-0.5 w-1/2 bg-pr-500">
                 <a href="{{ route('addAdmin') }}" class="flex  w-40  border-2 border-pr-500 hover:text-white hover:bg-pr-400 font-car font-medium p-1 " >
-                    <button>add new admin</button>
+                    <button>Add New Admin</button>
                 </a>
                 <hr>
             </div>
@@ -19,7 +19,7 @@
         <div class="grid md:grid-cols-3  gap-6 mt-6">
             @foreach ($admins as $admin)
                 <div class="bg-white shadow-xl rounded-md flex  justify-start items-center mx-2 ">
-                    
+                    <img src="{{asset('images/user.png')}}" alt=""> 
                     <div class="my-3 ">
                         <h2 class="font-car text-gray-900 font-semibold text-xl">{{ $admin->name }}</h2>
                         <h3 class=" text-gray-700 font-medium ">{{ $admin->email }}</h3>
@@ -31,8 +31,20 @@
 
 
         {{-- clients --}}
-
         <div id="reservations" class="mt-12">
+            <div class="flex align-middle justify-center">
+                <hr class=" mt-8 h-0.5 w-1/2 bg-pr-500">
+                <p class="my-2 mx-8  p-2 font-car font-bold text-gray-600 text-lg ">Customers</p>
+                <hr class=" mt-8 h-0.5 w-1/2 bg-pr-500">
+                <a href="#" class="flex  w-40  border-2 border-pr-500 hover:text-white hover:bg-pr-400 font-car font-medium p-1 " >
+                    <button>Add New Customer</button>
+                </a>
+                <hr>
+            </div>
+
+        </div>
+
+        {{-- <div id="reservations" class="mt-12">
             <div class="flex align-middle justify-center">
                 <hr class=" mt-8 h-0.5 w-1/2 bg-pr-500">
                 <p class="my-2 mx-8  p-2 font-car font-bold text-gray-600 text-lg ">Clients</p>
@@ -40,7 +52,7 @@
                 <hr>
             </div>
 
-        </div>
+        </div> --}}
 
         <div class="w-full overflow-hidden rounded-lg shadow-xs mb-12">
             <div class="w-full overflow-x-auto">
@@ -58,11 +70,11 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-
-
                         @forelse ($clients as $client)
                             <tr class="text-gray-700 dark:text-gray-400">
-
+                                <td class="px-4 py-3 text-sm">                                    
+                                    <img src="{{asset('images/user.png')}}" alt=""> 
+                                </td>
                                 
                                 <td class="px-4 py-3 text-sm">
                                     <p>

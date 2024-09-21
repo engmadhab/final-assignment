@@ -72,7 +72,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/users', function () {
 
         $admins = User::where('role', 'admin')->get();
-        $clients = User::where('role', 'client')->paginate(5);
+        $clients = User::where('role', 'customer')->paginate(5);
 
         return view('admin.users', compact('admins', 'clients'));
     })->name('users');

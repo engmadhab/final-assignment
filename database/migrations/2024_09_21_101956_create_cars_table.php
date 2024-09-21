@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cars', function (Blueprint $table) {
-            $table->id();
+            $table->id();          
             $table->string('name');
             $table->string('brand');
             $table->string('model');
@@ -21,6 +21,7 @@ return new class extends Migration
             $table->decimal('daily_rent_price', 8, 2);
             $table->string('availability')->default('available');
             $table->string('image')->nullable();
+            $table->integer('stars');
             $table->timestamps();
         });
     }
