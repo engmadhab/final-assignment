@@ -4,7 +4,7 @@ This is a car rental project developed for the graduation Project. It is built u
 
 ## Live website:
 
-- check live website [here](https://realrentcar.galdi.dev/)
+- check live website [here](/)
 
 ## Features
 
@@ -16,22 +16,12 @@ This is a car rental project developed for the graduation Project. It is built u
 
 ## Interfaces:
 
-- User
-
-![Alt text](public/user_interface.gif)
-
-- Admin
-
-![Alt text](public/admin_interface.gif)
-
-
-
 
 ## Installation
 
-1. Clone the repository: https://github.com/Mohamed-Galdi/RealRentCar
+1. Clone the repository: https://github.com/engmadhab/final-assignment
 
-2. Navigate to the project directory: `cd RealRentCar`
+2. Navigate to the project directory: `cd final-assignment`
 
 3. Install the dependencies using Composer: `composer install`
 
@@ -41,17 +31,15 @@ This is a car rental project developed for the graduation Project. It is built u
 
 5. Run the database migrations: `php artisan migrate`
 
-7. Seed database cars table: `php artisan db:seed --class=CarSeeder`
+6. Seed the database users table with a Demo admin: `php artisan db:seed --class=adminDemo` (login as admin at '/admin')
 
-8. Seed the database users table with a Demo admin: `php artisan db:seed --class=adminDemo` (login as admin at '/admin')
+7. `npm install` && `npm run dev`
 
-9. `npm install` && `npm run dev`
+8. Create the symbolic link: `php artisan storage:link`
 
-10. Create the symbolic link: `php artisan storage:link`
+9. Start the development server: `php artisan serve`
 
-11. Start the development server: `php artisan serve`
-
-12. Visit `http://localhost:8000` in your browser to access the application.
+10. Visit `http://localhost:8000` in your browser to access the application.
 
 ## Usage
 
@@ -66,6 +54,5 @@ This is a car rental project developed for the graduation Project. It is built u
 We welcome contributions to enhance the project! If you find any issues or have suggestions, please open an issue or submit a pull request.
 
 ## Authors
+-   Madhab Chandra Shill (madhabkumarjoy@gmail.com)
 
--   Mohamed Galdi (contact.galdi@gmail.com)
--   Mohamed Chtitihi (mohamedchtitihi@gmail.com)
