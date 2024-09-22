@@ -14,25 +14,25 @@
 
                     <h2 class="text-lg font-medium text-green-600"><span
                             class="text-lg font-car font-normal text-gray-500">Active
-                            Reservations: </span>{{ $user->reservations->where('status', 'Active')->count() }}</h2>
+                            Reservations: </span>{{ $user->rentals->where('status', 'Active')->count() }}</h2>
                     <h2 class="text-lg font-medium text-yellow-300"><span
                             class="text-lg font-car font-normal text-gray-500">Pending
-                            Reservations: </span>{{ $user->reservations->where('status', 'Pending')->count() }}</h2>
+                            Reservations: </span>{{ $user->rentals->where('status', 'Pending')->count() }}</h2>
                     <h2 class="text-lg font-medium text-Black"><span
                             class="text-lg font-car font-normal text-gray-500">Ended
-                            Reservations: </span>{{ $user->reservations->where('status', 'Ended')->count() }}</h2>
+                            Reservations: </span>{{ $user->rentals->where('status', 'Ended')->count() }}</h2>
                     <h2 class="text-lg font-medium text-red-600"><span
                             class="text-lg font-car font-normal text-gray-500">Canceled
-                            Reservations: </span>{{ $user->reservations->where('status', 'Canceled')->count() }}</h2>
+                            Reservations: </span>{{ $user->rentals->where('status', 'Canceled')->count() }}</h2>
                     <h2 class="text-lg font-medium text-pr-400"><span
                             class="text-lg font-car font-normal text-gray-500">Total
-                            Reservations: </span>{{ $user->reservations->count() }}</h2>
+                            Reservations: </span>{{ $user->rentals->count() }}</h2>
 
                 </div>
             </div>
 
             <div class="md:w-3/4 mt-8 md:mt-0">
-                @foreach ($user->reservations as $reservation)
+                @foreach ($user->rentals as $reservation)
                     <div class="flex justify-center  md:m-6 mb-4 rounded-lg bg-gray-200">
                         <div class="w-[350px] h-[250px]  overflow-hidden p-1 hidden md:block  m-3 rounded-md">
                             <img loading="lazy" class="w-full h-full object-cover overflow-hidden rounded-md"

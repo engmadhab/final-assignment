@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('cars', function (Blueprint $table) {
-            $table->unsignedBigInteger('reservation_id')->nullable();
-            $table->foreign('reservation_id')->references('id')->on('reservations');
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('phone')->nullable()->after('email');
+            $table->string('address')->nullable()->after('phone');
         });
     }
 
@@ -22,9 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('cars', function (Blueprint $table) {
-            $table->dropForeign(['reservation_id']);
-            $table->dropColumn('reservation_id');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('phone');
+            $table->dropColumn('address');
         });
     }
 };

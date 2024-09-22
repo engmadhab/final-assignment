@@ -23,16 +23,16 @@
                             Name
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            brand
+                           Brand
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            model
+                            Model
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            year
+                            Year
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            car_type
+                            Car Type
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Daily rent price
@@ -81,12 +81,12 @@
                             </td>
                             <td class="flex my-4 py-3  px-6  space-x-3 ">
                                 <a href="{{ route('cars.edit', ['car' => $car->id]) }}"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    class="bg-yellow-600  text-white p-2 rounded-md font-medium dark:text-blue-500 hover:bg-red-600">Edit</a>
                                 <form action="{{ route('cars.destroy', ['car' => $car->id]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"
-                                        class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</button>
+                                        class="bg-red-600 font-medium text-white p-2 rounded-md dark:text-red-500 hover:bg-yellow-600">Remove</button>
                                 </form>
                             </td>
                         </tr>

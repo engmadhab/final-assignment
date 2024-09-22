@@ -1,8 +1,8 @@
 @extends('layouts.myapp')
 @section('content')
     <div class="grid place-items-center " >
-        <div class="border p-5 md:w-1/2 w-4/5 bg-sec-100 my-12">
-            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+        <div class="border p-5 md:w-1/2 mx-4 bg-sec-100 my-12">
+            <form method="POST" action="{{ route('addNewCustomer') }}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-6">
@@ -29,8 +29,9 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone : </label>
-                    <input type="text" id="phone" name="phone" value="{{ old('phone') }}"
+                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number
+                        : </label>
+                    <input type="phone" id="phone" name="phone" value="{{ old('name') }}"
                         class="bg-pr-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pr-500 focus:border-pr-500 block w-full p-2.5 ">
                     @error('phone')
                         <span>
@@ -38,9 +39,10 @@
                         </span>
                     @enderror
                 </div>
+
                 <div class="mb-6">
-                    <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address : </label>
-                    <input type="text" id="address" name="address" value="{{ old('address') }}"
+                    <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address                         : </label>
+                    <input type="address" id="address" name="address" value="{{ old('name') }}"
                         class="bg-pr-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pr-500 focus:border-pr-500 block w-full p-2.5 ">
                     @error('address')
                         <span>
@@ -48,10 +50,6 @@
                         </span>
                     @enderror
                 </div>
-
-
- 
-
                 <div class="mb-6">
                     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                         password :</label>
@@ -71,23 +69,9 @@
                     <input type="password" id="password-confirm"
                         class="bg-pr-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pr-500 focus:border-pr-500 block w-full p-2.5 "
                         name="password_confirmation">
-
-                </div>
-
-
-                <div class="flex items-start mb-6">
-                    <div class="flex items-center h-5">
-                        <input id="remember" type="checkbox" value=""
-                            class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-pr-300 "
-                            name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                    </div>
-                    <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
-                        me</label>
                 </div>
                 <button type="submit"
-                    class="text-white bg-pr-400 hover:bg-pr-600 focus:ring-4 focus:outline-none focus:ring-pr-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-pr-600 dark:hover:bg-pr-700 dark:focus:ring-pr-800">Register</button>
-
-
+                    class="text-white bg-pr-400 hover:bg-pr-600 focus:ring-4 focus:outline-none focus:ring-pr-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-pr-600 dark:hover:bg-pr-700 dark:focus:ring-pr-800">Add New Customer</button>
             </form>
         </div>
 

@@ -5,17 +5,16 @@
             {{-- hero --}}
             <div class="flex justify-center md:py-28 py-12 mx-auto max-w-screen-xl">
                 <div class="flex  flex-col justify-center md:w-3/5  mx-12 md:ms-20 md:mx-0">
-                    <h1 class=" md:text-start text-center  font-car font-bold text-gray-900 mb-8  md:text-7xl text-4xl "><span class="text-pr-400"> EASY
-                        </span> WAY TO RENT YOUR CAR</h1>
+                    <h1 class=" md:text-start text-center  font-car font-bold text-gray-900 mb-8  md:text-7xl text-4xl "><span class="text-pr-400"> 
+                        </span>RENT YOUR FAVORITE CAR</h1>
                     <div class="md:w-3/5 md:hidden  ">
                         <img loading="lazy" src="/images/homepage-car.jpg" alt="home car">
                     </div>
-                    <p class="text-justify md:mx-0 mx-8 ">Whether you're planning a weekend
-                        getaway or a cross-country adventure.. </p>
+                    <p class="text-justify md:mx-0 mx-8 "> Welcome to car rental services </p>
                     <div class="flex justify-center md:justify-start mt-12 md:w-2/3 me-12 md:-ms-12">
                         <a href="/cars">
                             <button
-                                class="bg-pr-400 p-2 border-2 border-white rounded-md text-white hover:bg-pr-500 w-32 md:me-12 md:mx-12 mx-7 font-bold ">CARS</button>
+                                class="bg-slate-900 p-2 border-2 border-white rounded-md text-white hover:bg-pr-500 w-32 md:me-12 md:mx-12 mx-7 font-bold ">ALL CARS</button>
                         </a>
                         <a href="/contact_us">
                             <button class="border-2 border-pr-400 text-black w-32 p-2 rounded-md hover:bg-sec-400">CONTACT

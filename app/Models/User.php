@@ -19,15 +19,16 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'phone',
         'email',
+        'address',
         'password',
-        'role',
-        'reservation_id'
+        'role'
     ];
 
-    public function reservations()
+    public function rentals()
     {
-        return $this->hasMany(Reservation::class);
+        return $this->hasMany(Rental::class);
     }
 
     /**

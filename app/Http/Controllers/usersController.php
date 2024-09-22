@@ -15,4 +15,7 @@ class usersController extends Controller
     public function create(){
         return view('admin.addAdmin');
     }
+    public function create_customer(){
+        return view('admin.addCustomer');
+    }
 }

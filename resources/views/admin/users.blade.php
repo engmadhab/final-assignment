@@ -36,7 +36,7 @@
                 <hr class=" mt-8 h-0.5 w-1/2 bg-pr-500">
                 <p class="my-2 mx-8  p-2 font-car font-bold text-gray-600 text-lg ">Customers</p>
                 <hr class=" mt-8 h-0.5 w-1/2 bg-pr-500">
-                <a href="#" class="flex  w-40  border-2 border-pr-500 hover:text-white hover:bg-pr-400 font-car font-medium p-1 " >
+                <a href="{{ route('addCustomer') }}" class="flex  w-40  border-2 border-pr-500 hover:text-white hover:bg-pr-400 font-car font-medium p-1 " >
                     <button>Add New Customer</button>
                 </a>
                 <hr>
@@ -62,9 +62,11 @@
                             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                             <th class="text-center px-4 py-3">Client</th>
                             <th class="text-center px-4 py-3 w-48">Name</th>
+                            <th class="text-center px-4 py-3 w-24">Phone</th>                            
                             <th class="text-center px-4 py-3 w-24">Email</th>
+                            <th class="text-center px-4 py-3 w-24">Address</th>
                             <th class="text-center px-4 py-3 w-24">Joined at</th>
-                            <th class="text-center w-56 px-4 py-3">Reservations</th>
+                            <th class="text-center w-56 px-4 py-3">Rentals</th>
                             <th class="text-center px-4 py-3 w-26">Actions</th>
 
                         </tr>
@@ -83,7 +85,17 @@
                                 </td>
                                 <td class="px-4 py-3 text-sm">
                                     <p>
+                                        {{ $client->phone }}
+                                    </p>
+                                </td>
+                                <td class="px-4 py-3 text-sm">
+                                    <p>
                                         {{ $client->email }}
+                                    </p>
+                                </td>
+                                <td class="px-4 py-3 text-sm">
+                                    <p>
+                                        {{ $client->address }}
                                     </p>
                                 </td>
                                 <td class="px-4 py-3 text-sm w-32">
@@ -92,13 +104,13 @@
                                     </p>
                                 </td>
                                 <td class="px-4 py-3 text-sm text-center">
-                                    @if ($client->reservations->count() > 0)
+                                    @if ($client->rentals->count() > 0)
                                         <p>
-                                            <span class=" font-bold text-">{{ $client->reservations->count() }} </span>
-                                             reservation
+                                            <span class=" font-bold text-">{{ $client->rentals->count() }} </span>
+                                            Rentals
                                         </p>
                                     @else
-                                        no active reservations!!!
+                                        No Active Rentals!!!
                                     @endif
                                 </td>
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Car;
-use App\Models\Reservation;
+use App\Models\Rental;
 
 class adminDashboardController extends Controller
 {
@@ -18,10 +18,9 @@ class adminDashboardController extends Controller
         $admins = User::where('role', 'admin')->count();
         $cars = Car::all();
 
-        $reservations = Reservation::paginate(8);    
+        $rentals = Rental::paginate(8);    
         
-        // dd($reservations);
-        $avatars = User::all();
-        return view('admin.adminDashboard', compact('clients', 'avatars', 'admins', 'cars', 'reservations'));
+        $totalEarnings = Rental::where('status', 'Ended')->where('payment_status', 'Paid')->sum('total_price');
+        return view('admin.adminDashboard', compact('clients', 'totalEarnings', 'admins', 'cars', 'rentals'));
     }
 }

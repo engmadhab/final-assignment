@@ -16,12 +16,16 @@ class adminDemo extends Seeder
     {
         User::create([
             'name' => 'Admin User',
+            'phone' => '1234567890',
+            'address' => 'Sector 11, Uttara Dhaka',
             'email' => 'admin@email.com',
             'password' => Hash::make('pass1234'),
             'role' => 'admin'
         ]);
         User::create([
             'name' => 'Customer User',
+            'phone' => '1234567890',
+            'address' => 'Sector 11, Uttara Dhaka',
             'email' => 'customer@email.com',
             'password' => Hash::make('pass1234'),
             'role' => 'customer'

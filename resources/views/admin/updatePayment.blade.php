@@ -12,12 +12,12 @@
 <body>
     <div class="bg-gray-200 flex justify-center items-center h-screen">
         <div class="bg-white p-6 rounded-md md:w-1/3 w-full mx-4">
-            <h2 class="text-center font-car font-medium text-xl">{{ $reservation->car->brand }}
-                {{ $reservation->car->model }}</h2>
+            <h2 class="text-center font-car font-medium text-xl">{{ $rental->car->brand }}
+                {{ $rental->car->model }}</h2>
             <h2 class="text-start mt-4 text-gray-500 ">Current Payment Status: <span
-                    class="text-lg text-gray-800">{{ $reservation->payment_status }}</span></h2>
+                    class="text-lg text-gray-800">{{ $rental->payment_status }}</span></h2>
             <div>
-                <form action="{{ route('updatePayment', ['reservation' => $reservation->id]) }}" method="POST">
+                <form action="{{ route('updatePayment', ['rental' => $rental->id]) }}" method="POST">
                     @csrf
                     @method("PUT")
                     <div class="my-5 w-full flex items-center">

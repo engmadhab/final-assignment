@@ -9,10 +9,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Rental Car Assignment') }}</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-    <link rel="icon" type="image/x-icon" href="/images/logos/LOGOtext.png">
+    <link rel="icon" type="image/x-icon" href="/images/logos/logo.jpg">
     <style>
         html {
             scroll-behavior: smooth;
@@ -29,7 +29,7 @@
                 <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl drop-shadow-2xl">
                     {{-- LOGO --}}
                     <a href="{{ route('home') }}" class="flex items-center">
-                        <img loading="lazy" src="/images/logos/LOGOtext.png" class="mr-3 h-12" alt="Flowbite Logo" />
+                        <img loading="lazy" src="/images/logos/LOGOtext.png" class="mr-3 h-12" alt="Logo" />
                     </a>
 
                     {{-- login & Register buttons --}}
@@ -95,7 +95,7 @@
                             <li>
                                 <a href="{{ route('cars') }}">
                                     <div class="group text-center">
-                                        <div class="group-hover:cursor-pointer">Cars</div>
+                                        <div class="group-hover:cursor-pointer">Rentals</div>
                                         <div
                                             class="block invisible bg-pr-400 w-8 h-1 rounded-md text-center -bottom-1 mx-auto relative group-hover:visible">
                                         </div>
@@ -103,9 +103,9 @@
                             </li>
                             
                             <li>
-                                <a href="/contact_us">
+                                <a href="/contact">
                                     <div class="group text-center">
-                                        <div class="group-hover:cursor-pointer">Contact Us</div>
+                                        <div class="group-hover:cursor-pointer">Contact</div>
                                         <div
                                             class="block invisible bg-pr-400 w-20 h-1 rounded-md text-center -bottom-1 mx-auto relative group-hover:visible">
                                         </div>
@@ -146,7 +146,7 @@
                                 <li class=' '>
                                     <a href="{{ route('cars.index') }}">
                                         <div class="group text-center">
-                                            <div class="group-hover:cursor-pointer ">Cars</div>
+                                            <div class="group-hover:cursor-pointer ">All Cars</div>
                                             <div
                                                 class="block invisible bg-pr-400 w-8 h-1 rounded-md text-center -bottom-1 mx-auto relative group-hover:visible">
                                             </div>
@@ -157,7 +157,7 @@
                                 <li>
                                     <a href="{{ route('users') }}">
                                         <div class="group text-center">
-                                            <div class="group-hover:cursor-pointer">Users</div>
+                                            <div class="group-hover:cursor-pointer">Customers</div>
                                             <div
                                                 class="block invisible bg-pr-400 w-10 h-1 rounded-md text-center -bottom-1 mx-auto relative group-hover:visible">
                                             </div>
@@ -220,16 +220,6 @@
 
                                 </li>
                                 <li>
-                                    <a href="{{ route('cars') }}">
-                                        <div class="group text-center">
-                                            <div class="group-hover:cursor-pointer">Cars</div>
-                                            <div
-                                                class="block invisible bg-pr-400 w-8 h-1 rounded-md text-center -bottom-1 mx-auto relative group-hover:visible">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
                                     <a href="/about">
                                         <div class="group text-center">
                                             <div class="group-hover:cursor-pointer">About</div>
@@ -239,9 +229,20 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/contact_us">
+                                    <a href="{{ route('cars') }}">
                                         <div class="group text-center">
-                                            <div class="group-hover:cursor-pointer">Contact Us</div>
+                                            <div class="group-hover:cursor-pointer">Rentals</div>
+                                            <div
+                                                class="block invisible bg-pr-400 w-8 h-1 rounded-md text-center -bottom-1 mx-auto relative group-hover:visible">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="/contact">
+                                        <div class="group text-center">
+                                            <div class="group-hover:cursor-pointer">Contact</div>
                                             <div
                                                 class="block invisible bg-pr-400 w-20 h-1 rounded-md text-center -bottom-1 mx-auto relative group-hover:visible">
                                             </div>

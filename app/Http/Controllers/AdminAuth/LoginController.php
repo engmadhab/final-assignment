@@ -11,7 +11,7 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected $redirectTo = '/admin/dashboard'; // Adjust the admin dashboard route as per your project's setup
+    protected $redirectTo = '/admin/dashboard'; 
 
     public function __construct()
     {
@@ -20,13 +20,9 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('admin.adminLogin'); // Adjust the admin login view file name as per your project's setup
+        return view('admin.adminLogin'); 
     }
 
-    // protected function guard()
-    // {
-    //     return Auth::guard('admin'); // Adjust the admin guard name as per your project's setup
-    // }
 
     protected function credentials(Request $request)
     {
@@ -35,6 +31,6 @@ class LoginController extends Controller
 
     public function username()
     {
-        return 'email'; // Adjust the admin login field (e.g., email, username) as per your project's setup
+        return 'email'; 
     }
 }

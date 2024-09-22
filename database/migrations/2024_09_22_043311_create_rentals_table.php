@@ -11,9 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reservations', function (Blueprint $table) {
-            $table->id();           
+        Schema::create('rentals', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')
+            ->cascadeOnUpdate()->restrictOnDelete();
 
+            $table->unsignedBigInteger('car_id');
+            $table->foreign('car_id')->references('id')->on('cars')
+            ->cascadeOnUpdate()->restrictOnDelete();
+            
             $table->date('start_date');
             $table->date('end_date');
             $table->integer('days');
@@ -31,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reservations');
+        Schema::dropIfExists('rentals');
     }
 };

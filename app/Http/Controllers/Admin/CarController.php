@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 use App\Models\Car;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -58,7 +58,7 @@ class CarController extends Controller
         if ($request->hasFile('image')) {
             $imageName = $request->brand . '-' . $request->model . '-' . $request->engine . '-' . Str::random(10) . '.' . $request->file('image')->extension();
             $image = $request->file('image');
-            $path = $image->storeAs('images/cars', $imageName);
+            $path = $image->storeAs('/images/cars', $imageName);
             $car->image = '/'.$path;
         }
         // dd($car);
@@ -114,13 +114,13 @@ class CarController extends Controller
         if ($request->hasFile('image')) {
 
             $filename = basename($car->image);
-            Storage::disk('local')->delete('images/cars/' . $filename);
+            Storage::disk('local')->delete('/images/cars/' . $filename);
             $car->delete();
 
-            $imageName = $request->brand . '-' . $request->model . '-' . $request->engine . '-' . Str::random(10) . '.' . $request->file('image')->extension();
+            $imageName = $request->brand . '-' . $request->model . '-' . Str::random(10) . '.' . $request->file('image')->extension();
             $image = $request->file('image');
-            $path = $image->storeAs('images/cars', $imageName);
-            $car->image = $path;
+            $path = $image->storeAs('/images/cars', $imageName);            
+            $car->image = '/'.$path;
         }
         $car->save();
 
@@ -132,18 +132,21 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        $car = Car::findOrFail($car->id);
+        try {
+            $car = Car::findOrFail($car->id);
         if ($car->image) {
             // Get the filename from the image path
             $filename = basename($car->image);
 
             // Delete the image file from the storage
-            Storage::disk('local')->delete('images/cars/' . $filename);
+            Storage::disk('local')->delete('/images/cars/' . $filename);
             $car->delete();
         }
-
-
-
         return redirect()->route('cars.index');
+        } catch (\Exception $e) {
+            $errorMsg = 'You can not delete after booking car';
+            return $errorMsg;
+        }
+        
     }
 }
