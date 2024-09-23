@@ -15,8 +15,6 @@ class InvoiceController extends Controller
         $pdf = PDF::loadView('invoice', compact('reservation'));
         $filename = 'Reservation-' . $reservation_id.'-invoice'.'.pdf';
 
-        $pdf->save(storage_path('app/invoices/' . $filename));
-
         return $pdf->download($filename);
     }
 }

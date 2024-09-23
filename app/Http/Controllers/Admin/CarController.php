@@ -144,7 +144,7 @@ class CarController extends Controller
         }
         return redirect()->route('cars.index');
         } catch (\Exception $e) {
-            $errorMsg = 'You can not delete after booking car';
+            $errorMsg = 'You can not delete this car because of this car already rented';
             return $errorMsg;
         }
         

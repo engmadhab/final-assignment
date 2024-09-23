@@ -81,12 +81,12 @@
                             </td>
                             <td class="flex my-4 py-3  px-6  space-x-3 ">
                                 <a href="{{ route('cars.edit', ['car' => $car->id]) }}"
-                                    class="bg-yellow-600  text-white p-2 rounded-md font-medium dark:text-blue-500 hover:bg-red-600">Edit</a>
+                                    class="bg-amber-600  text-white p-2 rounded-md font-medium dark:text-blue-500 hover:bg-amber-900">Edit</a>
                                 <form action="{{ route('cars.destroy', ['car' => $car->id]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"
-                                        class="bg-red-600 font-medium text-white p-2 rounded-md dark:text-red-500 hover:bg-yellow-600">Remove</button>
+                                        class="bg-red-700 font-medium text-white p-2 rounded-md dark:text-red-500 hover:bg-red-900">Remove</button>
                                 </form>
                             </td>
                         </tr>

@@ -20,6 +20,6 @@ class RestrictAdminAccess
             return $next($request);
         }
 
-        return redirect()->route('adminDashboard'); 
+        return redirect()->route('Dashboard'); 
     }
 }

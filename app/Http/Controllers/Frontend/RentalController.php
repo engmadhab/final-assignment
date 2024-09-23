@@ -8,6 +8,7 @@ use App\Models\Car;
 use App\Models\Rental;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 class RentalController extends Controller
 {
     public function create($car_id)
@@ -48,6 +49,11 @@ class RentalController extends Controller
         $car->save();
 
         return view('thankyou',['reservation'=>$rental] );
+    }
+
+    public function rentals(){
+        $rentals = Rental::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        return view('clientReservations', compact('rentals'));
     }
 
 }

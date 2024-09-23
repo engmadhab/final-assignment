@@ -19,8 +19,8 @@
                             class="text-lg font-car font-normal text-gray-500">Pending
                             Reservations: </span>{{ Auth::user()->rentals->where('status', 'Pending')->count() }}</h2>
                     <h2 class="text-lg font-medium text-Black"><span
-                            class="text-lg font-car font-normal text-gray-500">Ended
-                            Reservations: </span>{{ Auth::user()->rentals->where('status', 'Ended')->count() }}</h2>
+                            class="text-lg font-car font-normal text-gray-500">Completed
+                            Reservations: </span>{{ Auth::user()->rentals->where('status', 'Completed')->count() }}</h2>
                     <h2 class="text-lg font-medium text-red-600"><span
                             class="text-lg font-car font-normal text-gray-500">Canceled
                             Reservations: </span>{{ Auth::user()->rentals->where('status', 'Canceled')->count() }}</h2>
@@ -39,8 +39,8 @@
                                 src="{{ $reservation->car->image }}" alt="">
                         </div>
                         <div class="m-3 p-1 md:w-[500px]">
-                            <h2 class="mt-2 font-car text-gray-800 text-2xl font-medium">{{ $reservation->car->brand }}
-                                {{ $reservation->car->model }} {{ $reservation->car->engine }}</h2>
+                            <h2 class="mt-2 font-car text-gray-800 text-2xl font-medium">{{ $reservation->car->name }} -
+                                {{ $reservation->car->brand }} - {{ $reservation->car->model }}</h2>
                             <div class="mt-4 flex justify-start md:gap-10 gap-5">
                                 <div class="flex gap-2 items-center">
                                     <p class="text-lg font-medium">From: </p>
@@ -53,13 +53,23 @@
                                         {{ Carbon\Carbon::parse($reservation->end_date)->format('y-m-d') }}</p>
                                 </div>
                                 <div class="flex gap-2 items-center">
-                                    <p class="text-lg font-medium">Price: </p>
+                                    <p class="text-lg font-medium">Total Days: </p>
+                                    <p class="text-pr-600 font-semibold text-lg">
+                                        {{ $reservation->days }}</p>
+                                </div>
+                                
+                            </div>
+                            <div class="mt-4 flex justify-start md:gap-10 gap-5">
+                                
+                                <div class="flex gap-2 items-center">
+                                    <p class="text-lg font-medium">Payment Mode: </p>
+                                    <p class="text-pr-600 font-semibold text-lg">{{ $reservation->payment_method }} </p>
+                                </div>
+                                <div class="flex gap-2 items-center">
+                                    <p class="text-lg font-medium">Total Price: </p>
                                     <p class="text-pr-600 font-semibold text-lg">{{ $reservation->total_price }} <span
                                             class="text-black">$</span> </p>
                                 </div>
-
-
-
                             </div>
                             <div class="mt-8 flex justify-start md:gap-16 gap-6">
 
@@ -78,13 +88,14 @@
                                         @endif
                                     </div>
                                 </div>
+                                
                                 <div class="flex gap-2 items-center">
                                     <p class="text-lg font-medium">Reservation: </p>
                                     <div class="px-4 py-3 text-sm ">
                                         @if ($reservation->status == 'Pending')
                                             <span
                                                 class="p-2 text-white rounded-md bg-yellow-300 ">{{ $reservation->status }}</span>
-                                        @elseif ($reservation->status == 'Ended')
+                                        @elseif ($reservation->status == 'Completed')
                                             <span
                                                 class="p-2 text-white rounded-md bg-black ">{{ $reservation->status }}</span>
                                         @elseif ($reservation->status == 'Active')
@@ -107,7 +118,7 @@
                             <div class="mt-8 text-center w-full px-2">
                                 <a href="{{ route('invoice', ['reservation' => $reservation->id]) }}">
                                     <button class="bg-pr-400 p-3 text-white font-bold hover:bg-black w-full rounded-md ">
-                                        Get Reservation Invoice</button>
+                                        Download Invoice</button>
                                 </a>
                             </div>
 

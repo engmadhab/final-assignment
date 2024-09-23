@@ -46,7 +46,7 @@
                                 class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 ">
                                 <span
                                     class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-sec-600 dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                                    Register
+                                    Singup
                                 </span>
                             </button>
 
@@ -133,7 +133,7 @@
                         <div class="hidden justify-between mb-6 items-center w-full lg:flex lg:w-auto" id="mobile-menu-2">
                             <ul class="flex flex-col  font-medium lg:flex-row lg:space-x-8 lg:mt-0 ">
                                 <li>
-                                    <a href='{{ route('adminDashboard') }}'>
+                                    <a href='{{ route('Dashboard') }}'>
                                         <div class="group text-center">
                                             <div class="group-hover:cursor-pointer">Dashboard</div>
                                             <div
@@ -153,7 +153,15 @@
                                     </a>
                                 </li>
 
-                                
+                                <li class=' '>
+                                    <a href="#">
+                                        <div class="group text-center">
+                                            <div class="group-hover:cursor-pointer ">Rentals</div>
+                                            <div
+                                                class="block invisible bg-pr-400 w-8 h-1 rounded-md text-center -bottom-1 mx-auto relative group-hover:visible">
+                                            </div>
+                                    </a>
+                                </li>
                                 <li>
                                     <a href="{{ route('users') }}">
                                         <div class="group text-center">
@@ -184,7 +192,7 @@
                             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
                                 aria-labelledby="dropdownDefaultButton">
                                 <li>
-                                    <a href="{{ route('adminDashboard') }}"
+                                    <a href="{{ route('Dashboard') }}"
                                         class="block px-4 py-2 hover:bg-pr-200 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
                                 </li>
                                 <li>

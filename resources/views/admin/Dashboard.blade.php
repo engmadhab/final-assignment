@@ -8,11 +8,8 @@
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         Dashboard
                     </h2>
-
                     <!-- Cards -->
                     <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-                        
-
                         <!-- Card -->
                         <a href="{{ route('cars.index') }}">
                             <div class="flex items-center p-4 bg-white rounded-lg shadow-xs  hover:bg-pr-200 ">
@@ -50,7 +47,7 @@
                                 </div>
                                 <div>
                                     <p class="text-lg font-medium text-pr-400 ">
-                                        Available Cars
+                                        Available For Rents 
                                     </p>
                                     <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
                                         {{ $cars->where('availability', 'Available')->count() }}
@@ -71,10 +68,91 @@
                                 </div>
                                 <div>
                                     <p class="text-lg font-medium text-pr-400 ">
+                                        Pending Rentals
+                                    </p>
+                                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                                        {{ $rentals->where('status', 'Pending')->count() }}
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Card -->
+                        <a href="javascript:void(0);" onclick="scrollToReservatios();">
+                            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs  hover:bg-pr-200 ">
+                                <div class="p-3 mr-4 bg-pr-400 rounded-full ">
+                                    <svg style="fill: #fff" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                        viewBox="0 0 512 512">
+                                        <path
+                                            d="M184 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H96c-35.3 0-64 28.7-64 64v16 48V448c0 35.3 28.7 64 64 64H416c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H376V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H184V24zM80 192H432V448c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V192zm176 40c-13.3 0-24 10.7-24 24v48H184c-13.3 0-24 10.7-24 24s10.7 24 24 24h48v48c0 13.3 10.7 24 24 24s24-10.7 24-24V352h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H280V256c0-13.3-10.7-24-24-24z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-lg font-medium text-pr-400 ">
+                                        Canceled Rentals
+                                    </p>
+                                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                                        {{ $rentals->where('status', 'Canceled')->count() }}
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Card -->
+                        <a href="javascript:void(0);" onclick="scrollToReservatios();">
+                            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs  hover:bg-pr-200 ">
+                                <div class="p-3 mr-4 bg-pr-400 rounded-full ">
+                                    <svg style="fill: #fff" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                        viewBox="0 0 512 512">
+                                        <path
+                                            d="M184 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H96c-35.3 0-64 28.7-64 64v16 48V448c0 35.3 28.7 64 64 64H416c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H376V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H184V24zM80 192H432V448c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V192zm176 40c-13.3 0-24 10.7-24 24v48H184c-13.3 0-24 10.7-24 24s10.7 24 24 24h48v48c0 13.3 10.7 24 24 24s24-10.7 24-24V352h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H280V256c0-13.3-10.7-24-24-24z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-lg font-medium text-pr-400 ">
                                         Active Rentals
                                     </p>
                                     <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
                                         {{ $rentals->where('status', 'Active')->count() }}
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="javascript:void(0);" onclick="scrollToReservatios();">
+                            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs  hover:bg-pr-200 ">
+                                <div class="p-3 mr-4 bg-pr-400 rounded-full ">
+                                    <svg style="fill: #fff" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                        viewBox="0 0 512 512">
+                                        <path
+                                            d="M184 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H96c-35.3 0-64 28.7-64 64v16 48V448c0 35.3 28.7 64 64 64H416c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H376V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H184V24zM80 192H432V448c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V192zm176 40c-13.3 0-24 10.7-24 24v48H184c-13.3 0-24 10.7-24 24s10.7 24 24 24h48v48c0 13.3 10.7 24 24 24s24-10.7 24-24V352h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H280V256c0-13.3-10.7-24-24-24z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-lg font-medium text-pr-400 ">
+                                        Total Rentals
+                                    </p>
+                                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                                        {{ $rentals->where('status', 'Completed')->count() }}
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Card pendingPayments -->
+                        <a href="javascript:void(0);" onclick="scrollToReservatios();">
+                            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs  hover:bg-pr-200 ">
+                                <div class="p-3 mr-4 bg-pr-400 rounded-full ">
+                                    <svg style="fill: #fff" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                        viewBox="0 0 512 512">
+                                        <path
+                                            d="M184 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H96c-35.3 0-64 28.7-64 64v16 48V448c0 35.3 28.7 64 64 64H416c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H376V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H184V24zM80 192H432V448c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V192zm176 40c-13.3 0-24 10.7-24 24v48H184c-13.3 0-24 10.7-24 24s10.7 24 24 24h48v48c0 13.3 10.7 24 24 24s24-10.7 24-24V352h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H280V256c0-13.3-10.7-24-24-24z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-lg font-medium text-pr-400 ">
+                                        Pending Earnings 
+                                    </p>
+                                    <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+                                        {{ $pendingPayments }}
                                     </p>
                                 </div>
                             </div>
@@ -100,17 +178,12 @@
                                 </div>
                             </div>
                         </a>
-
-                        
-                        
                     </div>
-
-
 
                     <div class="mt-12">
                         <div class="flex align-middle justify-center">
                             <hr class=" mt-8 h-0.5 w-1/2 bg-pr-500">
-                            <p class="my-2 mx-8  p-2 font-car font-bold text-gray-600 text-lg ">RESERVATIONS</p>
+                            <p class="my-2 mx-8  p-2 font-car font-bold text-gray-600 text-lg ">Rentals</p>
                             <hr class=" mt-8 h-0.5 w-1/2 bg-pr-500">
                             <hr>
                         </div>
@@ -124,12 +197,11 @@
                                 <thead>
                                     <tr
                                         class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                        <th class="px-4 py-3">Client</th>
-                                        <th class="px-4 py-3 w-48">Car</th>
-                                        <th class="px-4 py-3 w-24">Started at</th>
-                                        <th class="px-4 py-3 w-24">End at</th>
-                                        <th class="px-4 py-3">Duration</th>
-                                        <th class="px-4 py-3 w-26">Raimining days</th>
+                                        <th class="px-4 py-3">Customer Name</th>
+                                        <th class="px-4 py-3 w-48">Car Details</th>
+                                        <th class="px-4 py-3 w-24">Started Date</th>
+                                        <th class="px-4 py-3 w-24">End Date</th>
+                                        <th class="px-4 py-3">Duration</th>                                        
                                         <th class="px-4 py-3">Price</th>
                                         <th class="px-4 py-3">Paiment Status</th>
                                         <th class="px-4 py-3">Status</th>
@@ -153,7 +225,8 @@
                                                 </div>
                                             </td>
                                             <td class="px-4 py-3 text-sm">
-                                                {{ $reservation->car->brand }} {{ $reservation->car->model }}
+                                                {{ $reservation->car->name }} {{ $reservation->car->brand }} <br>
+                                                {{ $reservation->car->model }}
 
                                             </td>
 
@@ -166,22 +239,7 @@
                                                 <p class="px-4 py-3 text-sm">
                                                     {{ Carbon\Carbon::parse($reservation->end_date)->diffInDays(Carbon\Carbon::parse($reservation->start_date)) }}
                                                     days </p>
-                                            </td>
-
-
-                                            <td class="px-4 py-3 text-xs">
-                                                @if ($reservation->start_date > Carbon\Carbon::now())
-                                                    <p class="px-4 py-3 text-sm">
-                                                        {{ Carbon\Carbon::parse($reservation->end_date)->diffInDays(Carbon\Carbon::now()) }}
-                                                        days
-                                                    </p>
-                                                @else
-                                                    <span class="px-4 py-3 text-sm">
-                                                        {{ Carbon\Carbon::parse($reservation->end_date)->diffInDays(Carbon\Carbon::now()) }}
-                                                        days
-                                                    </span>
-                                                @endif
-                                            </td>
+                                            </td>                                            
 
                                             <td class="px-4 py-3 text-sm">
                                                 {{ $reservation->car->daily_rent_price * $reservation->days }} $
@@ -205,7 +263,7 @@
                                                 @if ($reservation->status == 'Pending')
                                                     <span
                                                         class="p-2 text-white rounded-md bg-yellow-300 ">{{ $reservation->status }}</span>
-                                                @elseif ($reservation->status == 'Ended')
+                                                @elseif ($reservation->status == 'Completed')
                                                     <span
                                                         class="p-2 text-white rounded-md bg-black ">{{ $reservation->status }}</span>
                                                 @elseif ($reservation->status == 'Active')

@@ -19,8 +19,8 @@
                             class="text-lg font-car font-normal text-gray-500">Pending
                             Reservations: </span>{{ $user->rentals->where('status', 'Pending')->count() }}</h2>
                     <h2 class="text-lg font-medium text-Black"><span
-                            class="text-lg font-car font-normal text-gray-500">Ended
-                            Reservations: </span>{{ $user->rentals->where('status', 'Ended')->count() }}</h2>
+                            class="text-lg font-car font-normal text-gray-500">Completed
+                            Reservations: </span>{{ $user->rentals->where('status', 'Completed')->count() }}</h2>
                     <h2 class="text-lg font-medium text-red-600"><span
                             class="text-lg font-car font-normal text-gray-500">Canceled
                             Reservations: </span>{{ $user->rentals->where('status', 'Canceled')->count() }}</h2>
@@ -84,7 +84,7 @@
                                         @if ($reservation->status == 'Pending')
                                             <span
                                                 class="p-2 text-white rounded-md bg-yellow-300 ">{{ $reservation->status }}</span>
-                                        @elseif ($reservation->status == 'Ended')
+                                        @elseif ($reservation->status == 'Completed')
                                             <span
                                                 class="p-2 text-white rounded-md bg-black ">{{ $reservation->status }}</span>
                                         @elseif ($reservation->status == 'Active')

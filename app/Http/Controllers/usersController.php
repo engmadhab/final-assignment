@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 
 class usersController extends Controller
 {
-    public function show(User $user){
-        $user = User::find($user->id);
-        return view('admin.clientDetails', compact('user'));
+    public function index(){
+        $admins = User::where('role', 'admin')->get();
+        $customers = User::where('role', 'customer')->paginate(5);
+        return view('admin.users', compact('admins', 'customers'));        
     }
 
     public function create(){
         return view('admin.addAdmin');
     }
-    public function create_customer(){
-        return view('admin.addCustomer');
-    }
+    
+    
 }

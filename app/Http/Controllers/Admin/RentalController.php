@@ -18,7 +18,7 @@ class RentalController extends Controller
         $rental = Rental::find($rental->id);
         $rental->payment_status = $request->payment_status;
         $rental->save();
-        return redirect()->route('adminDashboard');
+        return redirect()->route('Dashboard');
     }
 
     // Edit and Update Reservation Status
@@ -33,11 +33,11 @@ class RentalController extends Controller
         $rental = Rental::find($rental->id);
         $rental->status = $request->status;
         $car = $rental->car;
-        if($request->status == 'Ended' || $request->status == 'Canceled' ){
+        if($request->status == 'Completed' || $request->status == 'Canceled' ){
             $car->availability = 'Available';
             $car->save();
         }
         $rental->save();
-        return redirect()->route('adminDashboard');
+        return redirect()->route('Dashboard');
     }
 }

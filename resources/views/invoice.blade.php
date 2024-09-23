@@ -125,24 +125,20 @@
         <div class="inv-title">
             <h1>Invoice # {{ rand() }}__{{ $reservation->id }}</h1>
         </div>
-        <p style="margin-bottom: 30px; font-weight: bold">You can go to any of our stores near you and
-            present your reservation invoice (digital or printed) and then pay and get your car</p>
+        <p style="margin-bottom: 30px; font-weight: bold"></p>
         <div class="inv-header">
             <div>
-                <h2 style="color: #ff9b00">Real Rent Car</h2>
+                <h2 style="color: #ff9b00">Car Rental</h2>
                 <ul>
-                    <li>DR ANABDOUR AMMELEN </li>
-                    <li>TIZNIT</li>
-                    <li>+212637998660 | contact.galdi@gmail.com</li>
+                    <li>Madhab Chandra Shill | Dhaka Bangladesh</li>
+                    <li>+8801747654201 | madhabkumarjoy@gmail.com</li>
                 </ul>
-                <h2>Client</h2>
+                <h2>Customer</h2>
                 <ul>
-                    <li>{{ $reservation->user->name }}</li>
-                    <li>{{ $reservation->user->email }}</li>
+                    <li>{{ $reservation->user->name }} | {{ $reservation->user->address }}</li>
+                    <li>{{ $reservation->user->phone }} | {{ $reservation->user->email }}</li>                    
                 </ul>
             </div>
-
-
 
         </div>
         <div class="inv-body">
@@ -150,16 +146,17 @@
                 <thead>
                     <th>Car</th>
                     <th>Start date</th>
-                    <th>end date</th>
+                    <th>End date</th>
                     <th>Duration</th>
                     <th>Price per day</th>
-                    <th>Reservation price</th>
+                    <th>Rental price</th>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
-                            <h4>{{ $reservation->car->brand }} {{ $reservation->car->model }}</h4>
-                            <p>{{ $reservation->car->engine }}</p>
+                            <h4>{{ $reservation->car->name }}</h4>
+                            <p>{{ $reservation->car->brand }}</p>
+                            <p>{{ $reservation->car->model }}</p>
                         </td>
                         <td>{{ $reservation->start_date }}</td>
                         <td>{{ $reservation->end_date }}</td>
@@ -180,22 +177,17 @@
                     <tr>
                         <th>Sub total</th>
                         <td>{{ $reservation->total_price }} $ </td>
-                    </tr>
+                    </tr>                    
                     <tr>
-                        <th>tax</th>
-                        <td>(15%) {{ intval($reservation->total_price - ($reservation->total_price * 85) / 100) }}  $
-                        </td>
-                    </tr>
-                    <tr>
-                        <th style="color: #ff9b00">Total to pay</th>
-                        <td>{{ $reservation->total_price - ($reservation->total_price * 85) / 100 + $reservation->total_price }}
-                            $ </td>
+                        <th style="color: #ff9b00">Total to pay</th>                       
+
+                            <td>{{ $reservation->total_price}} $ </td>
                     </tr>
                 </table>
             </div>
 
         </div>
-        <h3 style="text-align: center; margin-top: 30px">Thank you for choosing us ❤️</h3>
+        <h3 style="text-align: center; margin-top: 30px">Thank you for choosing us</h3>
     </div>
 </body>
 

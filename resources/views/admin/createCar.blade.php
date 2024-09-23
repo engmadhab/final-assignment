@@ -5,7 +5,7 @@
             @csrf
             <div class="md:w-2/3 w-5/6 md:px-24 px-4 pb-8 mx-auto mt-2 space-y-12 bg-white border-2 border-gray-600 rounded-md">
                 <div class="pb-12 border-b border-gray-900/10">
-                    <h2 class="mt-2 text-lg font-bold leading-7 text-center text-gray-900">Fill the new car details</h2>
+                    <h2 class="mt-2 text-lg font-bold leading-7 text-center text-gray-900">Add new car details</h2>
 
                     <div class="grid grid-cols-1 mt-10 gap-x-6 gap-y-8 sm:grid-cols-6">
 
@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="sm:col-span-3">
-                            <label for="year" class="block text-sm font-medium leading-6 text-gray-900">year</label>
+                            <label for="year" class="block text-sm font-medium leading-6 text-gray-900">Year of Manufacture</label>
                             <div class="mt-2">
                                 <input type="number" name="year" id="year"
                                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pr-400 sm:text-sm sm:leading-6">
