@@ -9,6 +9,10 @@ use App\Models\Rental;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\CustomerRentalConfirmation;
+use App\Mail\AdminRentalNotification;
+use Illuminate\Support\Facades\Mail;
+
 class RentalController extends Controller
 {
     public function create($car_id)
@@ -43,10 +47,34 @@ class RentalController extends Controller
         $rental->status = 'Pending';
         $rental->payment_method = 'By Cash';
         $rental->payment_status = 'Pending';
+
+        // dd($user->email);
         $rental->save();
 
         $car->availability = 'Reserved';
         $car->save();
+
+ 
+        // Assume you have validated and saved the rental data
+        $rentalDetails = [
+            'customerName' => $user['name'],
+            'carModel' => $car['brand'] . ' ' . $car['model'],
+            'totalAmount' =>  $rental->total_price
+        ];
+
+        // Send email to the customer
+        // Mail::to($request->customer_email)->send(new CustomerRentalConfirmation($rentalDetails));
+        Mail::to($user->email)->send(new CustomerRentalConfirmation($rentalDetails));      
+        
+
+        // Mail::send('emails.order_status',$messageData,function($message)use ($email){
+        //     $message->to($email)->subject('Order Status Updated - Ecom website');
+        // });
+
+        // Send email to the admin
+        Mail::to('madhabkumarjoy@gmail.com')->send(new AdminRentalNotification($rentalDetails));
+
+        
 
         return view('thankyou',['reservation'=>$rental] );
     }
@@ -55,5 +83,8 @@ class RentalController extends Controller
         $rentals = Rental::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
         return view('clientReservations', compact('rentals'));
     }
+
+
+    
 
 }

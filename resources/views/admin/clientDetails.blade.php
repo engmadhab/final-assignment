@@ -13,8 +13,8 @@
                         </span>{{ $user->email }}</h2>
 
                     <h2 class="text-lg font-medium text-green-600"><span
-                            class="text-lg font-car font-normal text-gray-500">Active
-                            Reservations: </span>{{ $user->rentals->where('status', 'Active')->count() }}</h2>
+                            class="text-lg font-car font-normal text-gray-500">Ongoing
+                            Reservations: </span>{{ $user->rentals->where('status', 'Ongoing')->count() }}</h2>
                     <h2 class="text-lg font-medium text-yellow-300"><span
                             class="text-lg font-car font-normal text-gray-500">Pending
                             Reservations: </span>{{ $user->rentals->where('status', 'Pending')->count() }}</h2>
@@ -87,7 +87,7 @@
                                         @elseif ($reservation->status == 'Completed')
                                             <span
                                                 class="p-2 text-white rounded-md bg-black ">{{ $reservation->status }}</span>
-                                        @elseif ($reservation->status == 'Active')
+                                        @elseif ($reservation->status == 'Ongoing')
                                             <span
                                                 class="p-2 text-white rounded-md bg-green-500 px-4">{{ $reservation->status }}</span>
                                         @elseif ($reservation->status == 'Canceled')

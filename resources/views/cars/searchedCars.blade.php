@@ -4,13 +4,13 @@
         <form action="">
            <div class="flex justify-center md:flex-row flex-col md:gap-28 gap-4">
                 <div class="flex justify-evenly md:flex-row flex-col md:gap-16 gap-2">
-                    <input type="text" placeholder="brand" name="brand"
+                    <input type="text" placeholder="Brand" name="brand"
                         class="block  rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pr-400 sm:text-sm sm:leading-6">
-                    <input type="text" placeholder="model" name="model"
+                    <input type="text" placeholder="Car Type" name="car_type"
                         class="block  rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pr-400 sm:text-sm sm:leading-6">
-                    <input type="number" placeholder="$ minimum price " name="min_price"
+                    <input type="number" placeholder="$ Daily minimum rent price" name="min_price"
                         class="block  rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pr-400 sm:text-sm sm:leading-6">
-                    <input type="number" placeholder="$ maximum price " name="max_price"
+                    <input type="number" placeholder="$ Daily maximum rent price" name="max_price"
                         class="block  rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pr-400 sm:text-sm sm:leading-6">
                 </div>
                 <div>
@@ -37,7 +37,7 @@
                 <div class="px-5 pb-5 mt-4">
                     <div>
                         <h5 class="text-xl font-bold tracking-tight text-slate-900">{{ $car->brand }} {{ $car->model }}
-                            {{ $car->engine }}</h5>
+                            {{ $car->car_type }}</h5>
                     </div>
                     <div class="flex items-center justify-between mt-2 mb-5">
                         <p>

@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-screen-xl">
 
         {{-- Admins --}}
-        <div id="reservations" class="mt-12">
+        {{-- <div id="reservations" class="mt-12">
             <div class="flex align-middle justify-center">
                 <hr class=" mt-8 h-0.5 w-1/2 bg-pr-500">
                 <p class="my-2 mx-8  p-2 font-car font-bold text-gray-600 text-lg ">Admins</p>
@@ -27,7 +27,7 @@
                 </div>
             @endforeach
 
-        </div>
+        </div> --}}
 
 
         {{-- Customers --}}
@@ -53,8 +53,7 @@
                             <th class="text-center px-4 py-3 w-48">Customer Name</th>
                             <th class="text-center px-4 py-3 w-24">Phone</th>                            
                             <th class="text-center px-4 py-3 w-24">Email</th>
-                            <th class="text-center px-4 py-3 w-30">Address</th>
-                            <th class="text-center px-4 py-3 w-24">Joined at</th>
+                            <th class="text-center px-4 py-3 w-30">Address</th>                            
                             <th class="text-center w-56 px-4 py-3">Rentals</th>
                             <th class="text-center px-4 py-3 w-26">Actions</th>
 
@@ -83,12 +82,7 @@
                                     <p>
                                         {{ $customer->address }}
                                     </p>
-                                </td>
-                                <td class="px-4 py-3 text-sm w-32">
-                                    <p>
-                                        {{ Carbon\Carbon::parse($customer->created_at)->format('Y-m-d') }}
-                                    </p>
-                                </td>
+                                </td>                                
                                 <td class="px-4 py-3 text-sm text-center">
                                     @if ($customer->rentals->count() > 0)
                                         <p>

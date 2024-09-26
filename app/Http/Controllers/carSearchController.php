@@ -22,8 +22,8 @@ class carSearchController extends Controller
         }
 
         // Check if the 'model' input is provided and add the filter to the query
-        if ($request->filled('model')) {
-            $query->where('model', 'like', '%' . $request->model . '%');
+        if ($request->filled('car_type')) {
+            $query->where('car_type', 'like', '%' . $request->car_type . '%');
         }
 
         // Check if the 'min_price' input is provided and add the filter to the query

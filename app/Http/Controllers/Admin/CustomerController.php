@@ -39,7 +39,7 @@ class CustomerController extends Controller
         $user->email = $request->email;
         $user->phone = $request->phone;
         $user->address = $request->address;
-        $user->password = Hash::make($user['password']);
+        $user->password = Hash::make($request->password);
         $user->role = 'customer';    
         $user->save();
 

@@ -108,10 +108,10 @@
                                 </div>
                                 <div>
                                     <p class="text-lg font-medium text-pr-400 ">
-                                        Active Rentals
+                                        Ongoing Rentals
                                     </p>
                                     <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                                        {{ $rentals->where('status', 'Active')->count() }}
+                                        {{ $rentals->where('status', 'Ongoing')->count() }}
                                     </p>
                                 </div>
                             </div>
@@ -197,14 +197,15 @@
                                 <thead>
                                     <tr
                                         class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                        <th class="px-4 py-3 w-24">Rental ID</th>
                                         <th class="px-4 py-3">Customer Name</th>
                                         <th class="px-4 py-3 w-48">Car Details</th>
-                                        <th class="px-4 py-3 w-24">Started Date</th>
+                                        <th class="px-4 py-3 w-26">Start Date</th>
                                         <th class="px-4 py-3 w-24">End Date</th>
                                         <th class="px-4 py-3">Duration</th>                                        
-                                        <th class="px-4 py-3">Price</th>
-                                        <th class="px-4 py-3">Paiment Status</th>
-                                        <th class="px-4 py-3">Status</th>
+                                        <th class="px-4 py-3">Total Cost</th>
+                                        <th class="px-4 py-3">Payment Status</th>
+                                        <th class="px-4 py-3">Rental Status</th>
                                         <th class="px-4 py-3 ">Actions</th>
                                     </tr>
                                 </thead>
@@ -213,20 +214,17 @@
 
                                     @forelse ($rentals as $reservation)
                                         <tr class="text-gray-700 dark:text-gray-400">
+                                            <td class="px-4 py-3  text-sm">
+                                                    #{{ $reservation->id }}
+                                             </td>
                                             <td class="px-4 py-3">
-                                                <div class="flex items-center text-sm">
-                                                    
-                                                    <div>
-                                                        <p class="font-semibold">{{ $reservation->user->name }}</p>
-                                                        <p class="text-xs text-gray-600 dark:text-gray-400">
-                                                            {{ $reservation->user->email }}
-                                                        </p>
-                                                    </div>
+                                                <div class="flex items-center text-sm">                                                    
+                                                    <p class="font-semibold">{{ $reservation->user->name }}</p>
                                                 </div>
                                             </td>
                                             <td class="px-4 py-3 text-sm">
-                                                {{ $reservation->car->name }} {{ $reservation->car->brand }} <br>
-                                                {{ $reservation->car->model }}
+                                                {{ $reservation->car->name }} <br>
+                                                {{ $reservation->car->brand }} 
 
                                             </td>
 
@@ -266,7 +264,7 @@
                                                 @elseif ($reservation->status == 'Completed')
                                                     <span
                                                         class="p-2 text-white rounded-md bg-black ">{{ $reservation->status }}</span>
-                                                @elseif ($reservation->status == 'Active')
+                                                @elseif ($reservation->status == 'Ongoing')
                                                     <span
                                                         class="p-2 text-white rounded-md bg-green-500 px-4">{{ $reservation->status }}</span>
                                                 @elseif ($reservation->status == 'Canceled')

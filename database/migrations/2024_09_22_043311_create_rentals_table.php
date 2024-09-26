@@ -26,7 +26,7 @@ return new class extends Migration
             $table->integer('days');
             $table->decimal('price_per_day', 10, 2);
             $table->decimal('total_price');
-            $table->string('status')->default('active');
+            $table->string('status')->default('pending');
             $table->string('payment_method');
             $table->string('payment_status')->default('pending');
             $table->timestamps();
