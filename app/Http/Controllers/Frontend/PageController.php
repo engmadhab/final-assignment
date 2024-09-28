@@ -9,7 +9,7 @@ class PageController extends Controller
 {
     public function index()
     {
-        $cars = Car::take(6)->where('availability', '=', 'available')->get();
+        $cars = Car::where('availability', '=', 'available')->get();
         return view('home', compact('cars'));
     }
     public function about()

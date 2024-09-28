@@ -21,7 +21,7 @@
             </div>
         </form>
     </div>
-    <div class="mt-6 mb-2 grid md:grid-cols-3  justify-center items-center mx-auto max-w-screen-xl">
+    <div class="mt-6 mb-2 grid md:grid-cols-4 justify-center items-center mx-auto max-w-screen-xl">
         @foreach ($cars as $car)
             <div
                 class="relative md:m-10 m-4w flex w-full max-w-xs flex-col overflow-hidden bg-white shadow-md">

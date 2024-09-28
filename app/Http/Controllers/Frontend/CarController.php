@@ -9,7 +9,7 @@ class CarController extends Controller
 {
     public function index()
     {
-        $cars = Car::where('availability', '=', 'available')->paginate(9);
+        $cars = Car::where('availability', '=', 'available')->paginate(8);
         return view('cars.cars', compact('cars'));
     }
 }

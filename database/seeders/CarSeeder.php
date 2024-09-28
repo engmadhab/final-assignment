@@ -70,7 +70,7 @@ class CarSeeder extends Seeder
                 'stars' => 5,
             ],
             [
-                'name' => 'Hyundai_Tucson',
+                'name' => 'Hyundai Tucson',
                 'brand' => 'Hyundai',
                 'model' => 'Tucson',
                 'year' => '2014',
@@ -79,6 +79,28 @@ class CarSeeder extends Seeder
                 'availability' => 'Available',
                 'image' => '/images/cars/Hyundai_Tucson.jpg',
                 'stars' => 5,
+            ],
+            [
+                'name' => 'Mazda2 Hybrid',
+                'brand' => 'Mazda',
+                'model' => 'CX-5',
+                'year' => '2015',
+                'car_type' => 'Sedan',
+                'daily_rent_price' => 64,
+                'availability' => 'Available',
+                'image' => '/images/cars/Mazda_CX-5.jpg',
+                'stars' => 4,
+            ],
+            [
+                'name' => 'Jeep Cherokee',
+                'brand' => 'Jeep',
+                'model' => 'Wrangler',
+                'year' => '2016',
+                'car_type' => 'SUV',
+                'daily_rent_price' => 70,
+                'availability' => 'Available',
+                'image' => '/images/cars/Jeep_Wrangler.jpg',
+                'stars' => 3,
             ],
         ];
 

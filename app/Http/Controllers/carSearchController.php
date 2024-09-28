@@ -42,7 +42,7 @@ class carSearchController extends Controller
         $query->where('availability', '=', 'available');
 
         // Execute the query and paginate the results
-        $cars = $query->paginate(9);
+        $cars = $query->paginate(4);
 
         // Include any additional query parameters in the pagination links
         $cars->appends($request->except('page'));

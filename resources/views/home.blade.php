@@ -38,7 +38,7 @@
                     <hr class=" mt-8 h-0.5 w-2/5 bg-pr-500">
                     <hr>
                 </div>
-                <div class="   md:mr-16 mr-4 mb-4 flex justify-end">
+                <div class="md:mr-16 mr-4 mb-4 flex justify-end">
                     <a href="/cars">
                         <button
                             class="border-2 border-pr-400 text-black w-16 p-1 rounded-md hover:bg-pr-400 hover:text-white">See
@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <div class=" grid md:grid-cols-3  md:ps-2 justify-center p-2 gap-1 items-center mx-auto max-w-screen-xl">
+            <div class=" grid md:grid-cols-4  md:ps-2 justify-center p-2 gap-1 items-center mx-auto max-w-screen-xl">
                 @foreach ($cars as $car)
                     <div
                         class="relative md:m-10 flex w-full max-w-xs flex-col overflow-hidden border border-gray-100 bg-white shadow-md">
