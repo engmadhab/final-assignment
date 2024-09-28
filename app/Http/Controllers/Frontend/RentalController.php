@@ -58,7 +58,9 @@ class RentalController extends Controller
         // Assume you have validated and saved the rental data
         $rentalDetails = [
             'customerName' => $user['name'],
-            'carModel' => $car['brand'] . ' ' . $car['model'],
+            'carName' => $car['name'],
+            'carBrand' => $car['brand'],
+            'carModel' => $car['model'],
             'totalAmount' =>  $rental->total_price
         ];
 

@@ -15,18 +15,18 @@ class adminDemo extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'Admin User',
-            'phone' => '1234567890',
+            'name' => 'Madhab-Admin',
+            'phone' => '01747654201',
             'address' => 'Sector 11, Uttara Dhaka',
-            'email' => 'admin@email.com',
+            'email' => 'madhabkumarjoy@gmail.com',
             'password' => Hash::make('pass1234'),
             'role' => 'admin'
         ]);
         User::create([
-            'name' => 'Customer User',
-            'phone' => '1234567890',
+            'name' => 'Joy-User',
+            'phone' => '01677368828',
             'address' => 'Sector 11, Uttara Dhaka',
-            'email' => 'customer@email.com',
+            'email' => 'madhab@pulseservicesbd.com',
             'password' => Hash::make('pass1234'),
             'role' => 'customer'
         ]);
