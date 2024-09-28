@@ -28,20 +28,16 @@
             @endforeach
 
         </div> --}}
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            Customers
+        </h2>
 
 
         {{-- Customers --}}
-        <div id="reservations" class="mt-12">
-            <div class="flex align-middle justify-center">
-                <hr class=" mt-8 h-0.5 w-1/2 bg-pr-500">
-                <p class="my-2 mx-8  p-2 font-car font-bold text-gray-600 text-lg ">Customers</p>
-                <hr class=" mt-8 h-0.5 w-1/2 bg-pr-500">
-                <a href="{{ route('addCustomer') }}" class="flex  w-40  border-2 border-pr-500 hover:text-white hover:bg-pr-400 font-car font-medium p-1 " >
-                    <button>Add New Customer</button>
-                </a>
-                <hr>
-            </div>
-
+        <div id="reservations" class="mt-12">            
+            <a href="{{ route('addCustomer') }}" class="flex  w-40  border-2 border-pr-500 hover:text-white hover:bg-pr-400 font-car font-medium p-1 m-2" >
+                <button>Add New Customer</button>
+            </a>            
         </div>
 
         <div class="w-full overflow-hidden rounded-lg shadow-xs mb-12">

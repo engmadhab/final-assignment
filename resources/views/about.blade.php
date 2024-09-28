@@ -1,17 +1,18 @@
 @extends('layouts.myapp')
 @section('content')
     <div class="mx-auto max-w-screen-xl ">
+        
         <div class="flex md:flex-row flex-col justify-around  items-center px-6 pt-6">
+            
             <div class="md:m-12 p-6 md:w-1/2">
                 <img loading="lazy" src="/images/shop1.png" alt="shop image">
             </div>
             <div class=" relative md:m-12 m-6 md:w-1/2 md:p-6">
 
-                <p>Welcome to our car rental shop conveniently located in the heart of the city. Situated in a prime
-                    location, our shop provides easy access and a central hub for all your car rental needs. Whether you are
-                    a local resident or a traveler exploring the area, finding us is a breeze.</p>
-                <br>
-                <p>Our shop is strategically positioned near major transportation hubs, including airports, train stations,
+                
+                <h3 class="font-car font-bold text-3xl">Welcome to  our Car Rental Service , where your journey is our priority!</h3>
+                <p class="text-justify pt-4">At Car Rental Service, we are passionate about making transportation easy, accessible, and reliable. With years of experience in the car rental industry, we have built a reputation for delivering high-quality vehicles, excellent customer service, and affordable rates.</p>
+                <p class="text-justify pt-4">Our shop is strategically positioned near major transportation hubs, including airports, train stations,
                     and bus terminals, making it incredibly convenient for you to pick up and drop off your rental vehicle.
                     Upon arrival, our friendly staff will warmly greet you, ensuring a smooth and efficient rental process
                     from start to finish.</p>
@@ -24,14 +25,11 @@
                 <img loading="lazy" src="/images/shop_2.jpg" alt="shop image">
             </div>
 
-            <div class=" relative md:m-12 m-6 md:w-1/2 md:p-6">
-                <p>Located in a vibrant neighborhood, our shop is surrounded by a variety of amenities and attractions.
-                    You'll find an array of restaurants, cafes, and shopping centers just a short distance away, perfect for
-                    grabbing a bite to eat or running errands before or after your car rental experience.</p>
-                <br>
-                <p>With ample parking space available at our location, you can easily drive in, park your own vehicle, and
-                    drive out with your rental car seamlessly. We prioritize your convenience, and our location is designed
-                    to minimize any inconvenience or delays, allowing you to focus on your journey ahead.</p>
+            <div class="relative md:m-12 m-6 md:w-1/2 md:p-6">
+                <h3 class="font-car font-bold text-3xl">Our Mission</h3>
+                <p class="text-justify">Our mission is to provide you with a seamless car rental experience that gives you the freedom to explore without limitations. Whether you're on a business trip, family vacation, or just need a reliable ride for daily errands, we are committed to offering the perfect vehicle to meet your needs.</p>
+                <h3 class="font-car font-bold text-3xl pt-2">Our Story</h3>
+                <p class="text-justify">Founded in 2024, Car Rental Service started with a small fleet of cars and a big vision: to make car rentals simple, affordable, and accessible to everyone. Over the years, we have expanded our services, added new vehicle categories, and opened multiple locations to serve a growing number of customers.</p>
             </div>
 
 

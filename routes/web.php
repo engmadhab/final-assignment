@@ -52,6 +52,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::put('/updatePayment/{rental}', [App\Http\Controllers\Admin\RentalController::class, 'updatePayment'])->name('updatePayment');
     Route::get('/updateReservation/{rental}', [App\Http\Controllers\Admin\RentalController::class, 'editStatus'])->name('editStatus');
     Route::put('/updateReservation/{rental}', [App\Http\Controllers\Admin\RentalController::class, 'updateStatus'])->name('updateStatus');
+    Route::get('/rentals', [App\Http\Controllers\Admin\RentalController::class, 'rentals'])->name('rentals');
 });
 
 

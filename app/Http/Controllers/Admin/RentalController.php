@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 use App\Models\Rental;
 class RentalController extends Controller
 {
+    public function rentals(){
+        $rentals = Rental::all();
+        // dd($rentals);
+        return view('admin.rentals', compact('rentals'));
+
+    }
     public function editPayment(Rental $rental)
     {
         $rental = Rental::find($rental->id);
@@ -18,7 +24,7 @@ class RentalController extends Controller
         $rental = Rental::find($rental->id);
         $rental->payment_status = $request->payment_status;
         $rental->save();
-        return redirect()->route('Dashboard');
+        return redirect()->route('rentals');
     }
 
     // Edit and Update Reservation Status
@@ -38,6 +44,6 @@ class RentalController extends Controller
             $car->save();
         }
         $rental->save();
-        return redirect()->route('Dashboard');
+        return redirect()->route('rentals');
     }
 }

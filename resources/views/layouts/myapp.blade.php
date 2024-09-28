@@ -154,7 +154,7 @@
                                 </li>
 
                                 <li class=' '>
-                                    <a href="#">
+                                    <a href="{{ route('rentals') }}">
                                         <div class="group text-center">
                                             <div class="group-hover:cursor-pointer ">Rentals</div>
                                             <div

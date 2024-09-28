@@ -29,8 +29,8 @@
     <div class="mt-6 mb-2 grid md:grid-cols-3  justify-center items-center mx-auto max-w-screen-xl">
         @forelse ($cars as $car)
             <div
-                class="relative flex flex-col w-full max-w-xs m-10 overflow-hidden bg-white border border-gray-100 rounded-lg shadow-md">
-                <a class="relative flex mx-3 mt-3 overflow-hidden h-60 rounded-xl" href="{{ route('car.reservation', ['car' => $car->id]) }}">
+                class="relative flex flex-col w-full max-w-xs m-10 overflow-hidden bg-white border border-gray-100 shadow-md">
+                <a class="relative flex mx-2 mt-2 overflow-hidden h-60" href="{{ route('car.reservation', ['car' => $car->id]) }}">
                     <img loading="lazy" class="object-cover" src="{{ $car->image }}" alt="product image" />
                     
                 </a>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="flex items-center justify-between mt-2 mb-5">
                         <p>
-                            <span class="text-3xl font-bold text-slate-900">{{ $car->daily_rent_price }}</span>                            
+                            <span class="text-3xl font-bold text-slate-900">${{ $car->daily_rent_price }}</span>                            
                         </p>
 
                         <div class="flex items-center">
