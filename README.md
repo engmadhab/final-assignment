@@ -50,6 +50,19 @@ Video Link: https://drive.google.com/file/d/1Oz-na12j3iXdXM9yyqivQ3l2yWxTohW9/vi
 -   Admin users can access the admin panel by visiting `http://localhost:8000/admin` and using their credentials.
 -   Admins can manage cars, bookings, and users through the admin panel.
 
+
+## Mailtrap SMTP
+
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=user 
+MAIL_PASSWORD=pass 
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS="madhabkumarjoy@gmail.com"
+MAIL_FROM_NAME="${APP_NAME}"
+
+
 ## Authors
 -   Madhab Chandra Shill 
 
