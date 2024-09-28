@@ -20,9 +20,9 @@
             <div class="mb-6">
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
                     email</label>
-                <input type="email" id="email" name="email" value={{ old('email') ? old('email') : 'admin@email.com' }}
+                <input type="email" id="email" name="email" 
                         class="bg-pr-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pr-500 focus:border-pr-500 block w-full p-2.5 "
-                        placeholder="admin@email.com">
+                        placeholder="Enter your admin email">
                     @error('email')
                         <span>
                             <strong class="text-red-500">{{ $message }}</strong>
@@ -34,7 +34,7 @@
                     password</label>
                 <input type="password" id="password"
                         class="bg-pr-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pr-500 focus:border-pr-500 block w-full p-2.5 "
-                        placeholder="Test: pass1234" value="pass1234" name="password">
+                        placeholder="Enter your password" name="password">
                     @error('password')
                         <span>
                             <strong>{{ $message }}</strong>
